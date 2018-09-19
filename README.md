@@ -17,6 +17,7 @@ but like many people, I'd rather keep things strongly typed as much as possible.
 1. Create an asp.net core application. 
 - In Visual Studio this is:
 a. File > New > Project > Web Tab > Asp.NET Core Web Application
+
 b. Give it a name (and location, not the one used in the pic) and hit ok
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/1.png?raw=true)
@@ -38,7 +39,8 @@ c. Choose the mvc option (which this tutorial uses) and hit ok.
 
 4. In resources.xml, insert the following placeholder content:
 
-`<?xml version="1.0" encoding="utf-8" ?>
+```
+<?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <!-- ENGLISH -->
     <resource culture="en-GB" type="string" name="Site_Name" value="Site name (english)"></resource>
@@ -46,15 +48,17 @@ c. Choose the mvc option (which this tutorial uses) and hit ok.
     <!-- FRENCH -->
     <resource culture="fr-FR" type="string" name="Site_Name" value="Site name (Francais)"></resource>
 
-</resources>`
+</resources>
+```
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/4a.png?raw=true)
 
 5. Add a top level folder called 'Resources' (not in wwwroot) and create a class called `i18n`.
 
-6. Have that class inherit from `i18nStronglyTypedCore.i18n` and include the following property.
+6. Have that class inherit from `i18nStronglyTypedCore.i18n` and include the following property in the class.
 
 `public static string Site_Name { get { return GetStringValue(); } }`
+
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/5.png?raw=true)
 
@@ -63,21 +67,22 @@ c. Choose the mvc option (which this tutorial uses) and hit ok.
 `
 var pathToResources = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources.xml");
 Resources.i18n.InitResources(pathToResources);
+
 `
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/6.png?raw=true)
 
 8. In views/home/index, remove the standard content and add the following (remember to replace 'Testweb' with you own website's namespace).
 
-`
+
 @{
     ViewData["Title"] = "Home Page";
 }
-
 <h4>English Site Name</h4>
 <p>@Testweb.Resources.i18n.Site_Name</p>
 
 <h4>French Site Name</h4>
 <p>@Testweb.Resources.i18n.GetLocalisedStringValue(() => Testweb.Resources.i18n.Site_Name, "fr-FR")</p>
+
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/7.png?raw=true)
 
@@ -89,9 +94,14 @@ NOTE: The provider will take from the current culture by default.
 
 10. There are many ways to change the default culture. As a quick example, you could place the following in Startup.cs Configure
 
+```
 var cultureInfo = new System.Globalization.CultureInfo("fr-FR");
+
 System.Globalization.CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+
 System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+```
+
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/9.png?raw=true)
 `
