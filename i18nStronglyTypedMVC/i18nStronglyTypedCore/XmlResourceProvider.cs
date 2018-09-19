@@ -9,7 +9,7 @@ namespace i18nStronglyTypedCore
 {
     /// <summary>
     /// Created by i18n.ResourceProvider
-    /// Reource Provider created in line with this guide 
+    /// This is a .net core port from this blog.
     /// http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/
     /// </summary>
     public class XmlResourceProvider : BaseResourceProvider

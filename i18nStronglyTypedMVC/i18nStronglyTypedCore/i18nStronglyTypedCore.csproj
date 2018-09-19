@@ -2,10 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>A dotnet core port of http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/. Converted to a nuget package to save typing and with additional methods.</Description>
+    <Description>A dotnet core port of http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/. Converted to a nuget package to save typing and with additional methods for flexibility.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/HockeyJustin/i18nStronglyTypedCore</RepositoryUrl>
     <PackageTags>i18n mvc internationalisation csharp dotnetcore dotnet core</PackageTags>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
 
 </Project>

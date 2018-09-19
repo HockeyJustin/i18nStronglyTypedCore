@@ -28,13 +28,6 @@ namespace i18nStronglyTypedCore
             InitResources(pathToXml);
         }
 
-        public static void TestLocaleSpecificRequest()
-        {
-            //var x1 = i18n.GetLocalisedStringValue(() => i18n.Site_Name, "en-GB");
-            //var x2 = i18n.GetLocalisedStringValue(() => i18n.Site_Name, "fr-FR");
-        }
-
-
         public static string GetLocalisedStringValue<T>(Expression<Func<T>> propertyLambda, string cultureName)
         {
             var me = propertyLambda.Body as MemberExpression;
