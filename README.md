@@ -5,20 +5,22 @@ This is the source code for [the i18nStronglyTypedCore nuget package](https://ww
 ## About
 
 It is a .net core port of [afana's](http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/) excellent
-i18n provider for MVC 5. Of course, dotnet core has its' own [i18n provider](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-2.1) 
+ i18n (internationalization) provider for MVC 5, using xml for the resource strings. 
+ 
+Of course, dotnet core has its' own [i18n provider](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-2.1) 
 but like many people, I'd rather keep things strongly typed as much as possible. It's simple to get up and running.
 
 ## Prerequisites
 
 - Dotnet core 2.1+
 
-## To get up and running
+## To get up and running (quick tutorial)
 
 1. Create an asp.net core application. 
 - In Visual Studio this is:
-a. File > New > Project > Web Tab > Asp.NET Core Web Application
+- File > New > Project > Web Tab > Asp.NET Core Web Application
 
-b. Give it a name (and location, not the one used in the pic) and hit ok
+- Give it a name (and location, not the one used in the pic) and hit ok
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/1.png?raw=true)
 
@@ -38,6 +40,7 @@ c. Choose the mvc option (which this tutorial uses) and hit ok.
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/4.png?raw=true)
 
 4. In resources.xml, insert the following placeholder content:
+WARNING: The following example has the default culture to be British English (en-GB). You may need `culture="en-US"` or [another culture](https://msdn.microsoft.com/en-us/library/hh441729.aspx).
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -73,7 +76,6 @@ Resources.i18n.InitResources(pathToResources);
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/6.png?raw=true)
 
 8. In views/home/index, remove the standard content and add the following (remember to replace 'Testweb' with you own website's namespace).
-(Also see picture, for html tags, though the snipped should work)
 
 ```
 @{
@@ -94,13 +96,11 @@ NOTE: The provider will take from the current culture by default.
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/8.png?raw=true)
 
-10. There are many ways to change the default culture. As a quick example, you could place the following in Startup.cs Configure
+10. There are many ways to change the default culture. As a quick example, you could place the following in Startup.cs Configure method (before the resources code!)
 
 ```
 var cultureInfo = new System.Globalization.CultureInfo("fr-FR");
-
 System.Globalization.CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
-
 System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 ```
 
@@ -108,7 +108,7 @@ System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/9.png?raw=true)
 `
 
-11. Now run the site. Both resources will be in French.
+11. Now run the site. The default culture will also be in french. Remove the work done in step 10 to get back to normal.
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/10.png?raw=true)
 
