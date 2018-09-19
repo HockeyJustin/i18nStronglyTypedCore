@@ -2,6 +2,8 @@
 
 This is the source code for [the i18nStronglyTypedCore nuget package](https://www.nuget.org/packages/i18nStronglyTypedCore).
 
+[Github source code](https://github.com/HockeyJustin/i18nStronglyTypedCore)
+
 ## About
 
 It is a .net core port of [afana's](http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/) excellent
