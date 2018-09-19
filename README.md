@@ -40,7 +40,8 @@ c. Choose the mvc option (which this tutorial uses) and hit ok.
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/4.png?raw=true)
 
 4. In resources.xml, insert the following placeholder content:
-WARNING: The following example has the default culture to be British English (en-GB). You may need `culture="en-US"` or [another culture](https://msdn.microsoft.com/en-us/library/hh441729.aspx).
+
+> WARNING: The following example has the default culture to be British English (en-GB). You may need `culture="en-US"` or [another culture](https://msdn.microsoft.com/en-us/library/hh441729.aspx).
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
