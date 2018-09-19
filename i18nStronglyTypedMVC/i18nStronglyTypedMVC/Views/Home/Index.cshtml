@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h4>English Site Name</h4>
+<p>@i18nStronglyTypedMVC.Resources.Myi18nResources.Site_Name</p>
+
+<h4>French Site Name</h4>
+<p>@i18nStronglyTypedMVC.Resources.Myi18nResources.GetLocalisedStringValue(() => i18nStronglyTypedMVC.Resources.Myi18nResources.Site_Name, "fr-FR")</p>
