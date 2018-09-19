@@ -73,8 +73,9 @@ Resources.i18n.InitResources(pathToResources);
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/6.png?raw=true)
 
 8. In views/home/index, remove the standard content and add the following (remember to replace 'Testweb' with you own website's namespace).
+(Also see picture, for html tags, though the snipped should work)
 
-```
+
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -83,7 +84,7 @@ Resources.i18n.InitResources(pathToResources);
 
 <h4>French Site Name</h4>
 <p>@Testweb.Resources.i18n.GetLocalisedStringValue(() => Testweb.Resources.i18n.Site_Name, "fr-FR")</p>
-```
+
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/7.png?raw=true)
 
