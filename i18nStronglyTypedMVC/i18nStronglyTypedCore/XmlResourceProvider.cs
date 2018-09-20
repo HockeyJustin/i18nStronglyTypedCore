@@ -15,21 +15,30 @@ namespace i18nStronglyTypedCore
     public class XmlResourceProvider : BaseResourceProvider
     {
         // File path
-        private static string filePath = null;
+        private static string[] _filePaths = null;
 
         public XmlResourceProvider() { }
-        public XmlResourceProvider(string filePath)
+        public XmlResourceProvider(string filePath): this(new string[] { filePath })
         {
-            XmlResourceProvider.filePath = filePath;
+        }
 
-            if (!File.Exists(filePath)) throw new FileNotFoundException(string.Format("XML Resource file {0} was not found", filePath));
+        public XmlResourceProvider(string[] filePaths)
+        {
+            XmlResourceProvider._filePaths = filePaths;
+
+            foreach(var filePath in _filePaths)
+            {
+                if (!File.Exists(filePath)) throw new FileNotFoundException(string.Format("XML Resource file {0} was not found", filePath));
+            }
         }
 
         internal override IList<ResourceEntry> ReadResources()
         {
+            List<ResourceEntry> returnValue = new List<ResourceEntry>();
 
-            // Parse the XML file
-            return XDocument.Parse(File.ReadAllText(filePath))
+            foreach(var filePath in _filePaths)
+            {
+                var values = XDocument.Parse(File.ReadAllText(filePath))
                 .Element("resources")
                 .Elements("resource")
                 .Select(e => new ResourceEntry
@@ -38,20 +47,19 @@ namespace i18nStronglyTypedCore
                     Value = e.Attribute("value").Value,
                     Culture = e.Attribute("culture").Value
                 }).ToList();
+
+                returnValue.AddRange(values);
+            }
+
+            // Parse the XML file
+            return returnValue;
         }
         protected override ResourceEntry ReadResource(string name, string culture)
         {
-            // Parse the XML file
-            return XDocument.Parse(File.ReadAllText(filePath))
-                .Element("resources")
-                .Elements("resource")
-                .Where(e => e.Attribute("name").Value == name && e.Attribute("culture").Value == culture)
-                .Select(e => new ResourceEntry
-                {
-                    Name = e.Attribute("name").Value,
-                    Value = e.Attribute("value").Value,
-                    Culture = e.Attribute("culture").Value
-                }).FirstOrDefault();
+            // inefficient
+            return ReadResources()
+                .Where(_ => _.Name == name && _.Culture == culture)
+                .FirstOrDefault();
         }
     }
 }

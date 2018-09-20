@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    
+    <!-- FRENCH -->
+    <resource culture="fr-FR" type="string" name="Site_Name" value="Site name (Francais)"></resource>
+
+</resources>

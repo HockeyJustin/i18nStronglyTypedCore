@@ -38,8 +38,9 @@ namespace i18nStronglyTypedMVC
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            var pathToResources = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources.xml");
-            Resources.Myi18nResources.InitResources(pathToResources);
+            var pathToResourcesEn = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources.xml");
+            var pathToResourcesFr = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources-fr.xml");
+            Resources.Myi18nResources.InitResources(new string[] { pathToResourcesEn, pathToResourcesFr });
 
             if (env.IsDevelopment())
             {

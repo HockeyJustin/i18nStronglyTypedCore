@@ -18,12 +18,22 @@ namespace i18nStronglyTypedCore
 
         public static void InitResources(string pathToXml)
         {
+            InitResources(new string[] { pathToXml });
+        }
+
+        public static void InitResources(string[] pathToXml)
+        {
             resourceProvider =
              new XmlResourceProvider(pathToXml);
             _resources = ((XmlResourceProvider)resourceProvider).ReadResources();
         }
 
         public static void ReloadResources(string pathToXml)
+        {
+            InitResources(pathToXml);
+        }
+
+        public static void ReloadResources(string[] pathToXml)
         {
             InitResources(pathToXml);
         }

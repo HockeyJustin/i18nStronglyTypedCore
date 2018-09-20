@@ -75,7 +75,15 @@ var pathToResources = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resour
 Resources.i18n.InitResources(pathToResources);
 ```
 
-`
+> NOTE: If yo have more than one resource file, you can add multiple files e.g. 
+
+```
+var pathToResourcesEn = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources.xml");
+var pathToResourcesFr = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources-fr.xml");
+Resources.i18n.InitResources(new string[] { pathToResourcesEn, pathToResourcesFr });
+```
+
+
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/6.png?raw=true)
 
 8. In views/home/index, remove the standard content and add the following (remember to replace 'Testweb' with you own website's namespace).
