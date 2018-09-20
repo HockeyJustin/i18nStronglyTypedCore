@@ -6,11 +6,23 @@ This is the source code for [the i18nStronglyTypedCore nuget package](https://ww
 
 ## About
 
-It is a .net core port of [afana's](http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/) excellent
- i18n (internationalization) provider for MVC 5, using xml for the resource strings. 
+This is a .net core port of [afana's](http://afana.me/archive/2013/11/01/aspnet-mvc-internationalization-store-strings-in-database-or-xml.aspx/) excellent i18n (internationalization) provider for MVC 5, using xml for the resource strings. 
+
+There's also some extras, such as per request language responses and multiple resource file handling (see tutorial below).
  
 Of course, dotnet core has its' own [i18n provider](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization?view=aspnetcore-2.1) 
 but like many people, I'd rather keep things strongly typed as much as possible. It's simple to get up and running.
+
+The upsides to this package are:
+1. Strongly typed
+2. Seems pretty solid
+3. Only takes a couple of minutes to get up and running.
+4. Can handle multiple resource files.
+5. Can handle "per request" language responses (see tutorial)
+
+The downsides to this package are:
+1. *Doesn't work with Attributes (the standard .net core one does)
+2. If you create the c# part, but forget to put anything in the xml, the error is a bit tricky to work out.
 
 ## Prerequisites
 
