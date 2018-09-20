@@ -75,7 +75,7 @@ var pathToResources = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resour
 Resources.i18n.InitResources(pathToResources);
 ```
 
-> NOTE: If yo have more than one resource file, you can add multiple files e.g. 
+> NOTE: If yo have more than one resource file, you can add multiple files as shown below (but don't copy for this tutorial, as we only have 1 resource file)  
 
 ```
 var pathToResourcesEn = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources.xml");
