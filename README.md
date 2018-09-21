@@ -158,7 +158,7 @@ namespace Testweb.Resources
 }
 ```
 
-3. Go to the resources xml files. Copy the `Site_Name` resource and paste below. Change the `name` attribute (`Site_Name`) 
+3. Go to the resources.xml file. Copy the `Site_Name` resource and paste below. Change the `name` attribute (`Site_Name`) 
 to match the name of your new property (e.g. `Hello_Text`) and update the value e.g.
 
 `<resource culture="en-GB" type="string" name="Hello_Text" value="Hello"></resource>`
@@ -167,7 +167,7 @@ to match the name of your new property (e.g. `Hello_Text`) and update the value 
 
 `<resource culture="fr-FR" type="string" name="Hello_Text" value="Bonjour"></resource>`
 
-5. So your final Resources.xml will look somehing like this:
+5. So your final Resources.xml will look something like this:
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -197,6 +197,7 @@ var hello = Resources.i18n.Hello_Text;
 var bonjour = Resources.i18n.GetLocalisedStringValue(() => Testweb.Resources.i18n.Hello_Text, "fr-FR");
 ```
 
+END
 
 
 > Remember, you can split your resource files if needed (see section 6 of 'To get up and running' above). This tutorial has only used one file for simplicity.
