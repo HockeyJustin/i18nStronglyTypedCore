@@ -170,5 +170,37 @@ namespace Testweb.Resources
 
 `<resource culture="fr-FR" type="string" name="Hello_Text" value="Bonjour"></resource>`
 
+6. So your final Resources.xml will look somehing like this:
+
+```
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <!-- ENGLISH (this could be en-US) -->
+    <resource culture="en-GB" type="string" name="Site_Name" value="Site name (english)"></resource>
+    <resource culture="en-GB" type="string" name="Hello_Text" value="Hello"></resource>
+
+    <!-- FRENCH -->
+    <resource culture="fr-FR" type="string" name="Site_Name" value="Site name (Francais)"></resource>
+    <resource culture="fr-FR" type="string" name="Hello_Text" value="Bonjour"></resource>
+
+</resources>
+
+```
+
+7. And you would call it like this (Razor):
+
+`@Testweb.Resources.i18n.Hello_Text`
+
+8. Or like this (C#)
+
+```
+// Your default culture
+var hello = Resources.i18n.Hello_Text;
+// A request for the french resource
+var bonjour = Resources.i18n.GetLocalisedStringValue(() => Testweb.Resources.i18n.Hello_Text, "fr-FR");
+```
+
+
+
 
 
