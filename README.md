@@ -158,19 +158,16 @@ namespace Testweb.Resources
 }
 ```
 
-3. Go to the resources xml files. Copy the `Site_Name` resource and paste below. i.e. copy + paste this one 
-
-`<resource culture="en-GB" type="string" name="Site_Name" value="Site name (english)"></resource>`
-
-4. Change the `name` attribute (`Site_Name`) to match the name of your new property and update the value e.g.
+3. Go to the resources xml files. Copy the `Site_Name` resource and paste below. Change the `name` attribute (`Site_Name`) 
+to match the name of your new property and update the value e.g.
 
 `<resource culture="en-GB" type="string" name="Hello_Text" value="Hello"></resource>`
 
-5. For other languages, copy + paste your new row, remembering to change the `culture` attribute and value. e.g. 
+4. For other languages, copy + paste your new row, remembering to change the `culture` attribute and value. e.g. 
 
 `<resource culture="fr-FR" type="string" name="Hello_Text" value="Bonjour"></resource>`
 
-6. So your final Resources.xml will look somehing like this:
+5. So your final Resources.xml will look somehing like this:
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -187,11 +184,11 @@ namespace Testweb.Resources
 
 ```
 
-7. And you would call it like this (Razor) (remember your namespace might be different to `Testweb`):
+6. And you would call it like this (Razor) (remember your namespace might be different to `Testweb`):
 
 `@Testweb.Resources.i18n.Hello_Text`
 
-8. Or like this (C#)
+7. Or like this (C#)
 
 ```
 // Your default culture
