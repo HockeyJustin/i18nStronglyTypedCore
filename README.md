@@ -136,7 +136,7 @@ System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/10.png?raw=true)
 
 
-## To add more properties
+## [To add more properties](#add-more-properties)
 
 1. Copy the `Site_Name` property in Resources/i18n.cs i.e. 
 
