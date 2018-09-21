@@ -55,7 +55,7 @@ c. Choose the mvc option (which this tutorial uses) and hit ok.
 
 4. In resources.xml, insert the following placeholder content:
 
-> WARNING: The following example has the default culture to be British English (en-GB). You may need `en-US` or [another culture](https://msdn.microsoft.com/en-us/library/hh441729.aspx).
+> *WARNING*: The following example has the default culture to be British English (en-GB). You may need `en-US` or [another culture](https://msdn.microsoft.com/en-us/library/hh441729.aspx).
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -129,13 +129,46 @@ System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/9.png?raw=true)
-`
+
 
 11. Now run the site. The default culture will also be in french. Remove the work done in step 10 to get back to normal.
 
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/10.png?raw=true)
 
 
-`
+## To add more properties
+
+1. Copy the `Site_Name` property in Resources/i18n.cs i.e. 
+
+`public static string Site_Name { get { return GetStringValue(); } }` 
+
+2. Paste it on a new line and change the proterty name e.g. 
+
+```
+namespace Testweb.Resources
+{
+    public class i18n : i18nStronglyTypedCore.i18n
+    {
+        public static string Site_Name { get { return GetStringValue(); } }
+
+        public static string Hello_Text { get { return GetStringValue(); } }
+
+        // Add more here...
+    }
+}
+```
+
+3. Go to the resources xml files. Copy the `Site_Name` resource and paste below. i.e. this one 
+
+`<resource culture="en-GB" type="string" name="Site_Name" value="Site name (english)"></resource>`
+
+4. Change the `name` attribute (`Site_Name`) to match the name of your new property and update the value e.g.
+
+`<resource culture="en-GB" type="string" name="Hello_Text" value="Hello"></resource>`
+
+5. For other languages, copy + paste that row, remembering to change the `culture` attribute and value. e.g. 
+
+`<resource culture="fr-FR" type="string" name="Hello_Text" value="Bonjour"></resource>`
+
 
 
