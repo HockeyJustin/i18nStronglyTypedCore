@@ -136,7 +136,7 @@ System.Globalization.CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 ![alt tag](https://github.com//HockeyJustin/i18nStronglyTypedCore/blob/master/i18nStronglyTypedMVC/i18nStronglyTypedMVC/wwwroot/images/10.png?raw=true)
 
 
-## [To add more properties](#add-more-properties)
+## To add more properties
 
 1. Copy the `Site_Name` property in Resources/i18n.cs i.e. 
 
@@ -200,7 +200,7 @@ var bonjour = Resources.i18n.GetLocalisedStringValue(() => Testweb.Resources.i18
 END
 
 
-> Remember, you can split your resource files if needed (see section 6 of 'To get up and running' above). This tutorial has only used one file for simplicity.
+> Remember, you can split your resource files if needed (see section 7 of 'To get up and running' above). This tutorial has only used one file for simplicity.
 
 
 
