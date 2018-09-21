@@ -158,7 +158,7 @@ namespace Testweb.Resources
 }
 ```
 
-3. Go to the resources xml files. Copy the `Site_Name` resource and paste below. i.e. this one 
+3. Go to the resources xml files. Copy the `Site_Name` resource and paste below. i.e. copy + paste this one 
 
 `<resource culture="en-GB" type="string" name="Site_Name" value="Site name (english)"></resource>`
 
@@ -166,7 +166,7 @@ namespace Testweb.Resources
 
 `<resource culture="en-GB" type="string" name="Hello_Text" value="Hello"></resource>`
 
-5. For other languages, copy + paste that row, remembering to change the `culture` attribute and value. e.g. 
+5. For other languages, copy + paste your new row, remembering to change the `culture` attribute and value. e.g. 
 
 `<resource culture="fr-FR" type="string" name="Hello_Text" value="Bonjour"></resource>`
 
@@ -187,7 +187,7 @@ namespace Testweb.Resources
 
 ```
 
-7. And you would call it like this (Razor):
+7. And you would call it like this (Razor) (remember your namespace might be different to `Testweb`):
 
 `@Testweb.Resources.i18n.Hello_Text`
 
