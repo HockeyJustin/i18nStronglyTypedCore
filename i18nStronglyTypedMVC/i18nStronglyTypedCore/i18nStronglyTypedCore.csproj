@@ -2,14 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>*See "source code" link for tutorial* (github). This is a dotnet core port of afana.me's MVC5 internationalization i18n. Converted to a nuget package to save typing and with additional methods for flexibility. Unlike dotnetcore's inbuilt localisation, this is strongly typed (as much as possible)</Description>
+    <Description>Strongly typed i18n (internationalization) for dot net core.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/HockeyJustin/i18nStronglyTypedCore</RepositoryUrl>
     <PackageTags>i18n mvc internationalisation csharp dotnetcore dotnet core</PackageTags>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <FileVersion>1.0.0.3</FileVersion>
-    <Version>1.0.0.3</Version>
-    <PackageReleaseNotes>1.0.0.3 - Can now have multiple resource files</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
+    <Version>1.0.0.4</Version>
+    <PackageReleaseNotes>1.0.0.3 - Can now have multiple resource files
+1.0.0.4 - Change to metadata only</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
