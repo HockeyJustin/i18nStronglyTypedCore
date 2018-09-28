@@ -202,6 +202,8 @@ END
 
 > Remember, you can split your resource files if needed (see section 7 of 'To get up and running' above). This tutorial has only used one file for simplicity.
 
+Also, if you want to get a list of all the cultures (e.g. en-GB, fr-FR) available from the resources, use `Resources.i18n.GetAllResourceCultures();`
+
 
 
 
