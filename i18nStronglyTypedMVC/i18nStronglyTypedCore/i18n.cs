@@ -85,7 +85,7 @@ namespace i18nStronglyTypedCore
             return returnValue;
         }
 
-        internal static List<string> GetAllCultures()
+        public static List<string> GetAllResourceCultures()
         {
             return _resources.Select(_ => _.Culture).Distinct().OrderBy(_ => _).ToList();
         }

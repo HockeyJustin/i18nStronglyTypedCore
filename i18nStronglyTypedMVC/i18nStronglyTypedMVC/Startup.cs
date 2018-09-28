@@ -42,6 +42,8 @@ namespace i18nStronglyTypedMVC
             var pathToResourcesFr = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources-fr.xml");
             Resources.Myi18nResources.InitResources(new string[] { pathToResourcesEn, pathToResourcesFr });
 
+            var localesAvailable = Resources.Myi18nResources.GetAllResourceCultures();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
