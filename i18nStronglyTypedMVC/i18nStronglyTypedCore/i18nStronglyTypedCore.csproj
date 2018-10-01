@@ -6,10 +6,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/HockeyJustin/i18nStronglyTypedCore</RepositoryUrl>
     <PackageTags>i18n mvc internationalisation csharp dotnetcore dotnet core</PackageTags>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
-    <Version>1.0.0.5</Version>
-    <PackageReleaseNotes>1.0.0.5 - Additional public method to get a list of locales available (from the resources). This will probably be the last release before the project is complete.
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
+    <Version>1.0.0.6</Version>
+    <PackageReleaseNotes>1.0.0.6 - New public method 'SetCustomResourcesCulture' to enable getting of all resources in a different locale to CurrentUICulture.
+1.0.0.5 - Additional public method to get a list of locales available (from the resources).
 1.0.0.4 - Change to metadata only
 1.0.0.3 - Can now have multiple resource files
 </PackageReleaseNotes>
