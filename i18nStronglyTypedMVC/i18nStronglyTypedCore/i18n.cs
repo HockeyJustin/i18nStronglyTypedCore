@@ -16,6 +16,8 @@ namespace i18nStronglyTypedCore
 
         private static IList<ResourceEntry> _resources;
 
+        private static string _defaulUItCultureToUse = "en-GB";
+
         public static void InitResources(string pathToXml)
         {
             InitResources(new string[] { pathToXml });
@@ -26,6 +28,8 @@ namespace i18nStronglyTypedCore
             resourceProvider =
              new XmlResourceProvider(pathToXml);
             _resources = ((XmlResourceProvider)resourceProvider).ReadResources();
+            _defaulUItCultureToUse = CultureInfo.CurrentUICulture.Name;
+
         }
 
         public static void ReloadResources(string pathToXml)
@@ -36,6 +40,11 @@ namespace i18nStronglyTypedCore
         public static void ReloadResources(string[] pathToXml)
         {
             InitResources(pathToXml);
+        }
+
+        public static void SetCustomResourcesCulture(string cultureCode)
+        {
+            _defaulUItCultureToUse = cultureCode;
         }
 
         public static string GetLocalisedStringValue<T>(Expression<Func<T>> propertyLambda, string cultureName)
@@ -74,7 +83,7 @@ namespace i18nStronglyTypedCore
         public static string GetStringValue([CallerMemberName] string propertyName = null)
         {
             // Try to get a value in the locale requested.
-            var returnValue = _resources.FirstOrDefault(i => i.Name == propertyName && i.Culture == CultureInfo.CurrentUICulture.Name)?.Value;
+            var returnValue = _resources.FirstOrDefault(i => i.Name == propertyName && i.Culture == _defaulUItCultureToUse)?.Value;
 
             //  No return value for the culture, fall back to english
             returnValue = returnValue ?? _resources.FirstOrDefault(i => i.Name == propertyName && i.Culture == "en-GB")?.Value;

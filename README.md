@@ -204,6 +204,8 @@ END
 
 Also, if you want to get a list of all the cultures (e.g. en-GB, fr-FR) available from the resources, use `Resources.i18n.GetAllResourceCultures();`
 
+And finally, if you need to use a language different to the `CultureInfo.CurrentUICulture.Name`, you can use `Resources.Myi18nResources.SetCustomResourcesCulture("fr-FR");`
+
 
 
 

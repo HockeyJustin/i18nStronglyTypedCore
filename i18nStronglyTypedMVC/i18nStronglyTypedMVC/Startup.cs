@@ -42,6 +42,9 @@ namespace i18nStronglyTypedMVC
             var pathToResourcesFr = System.IO.Path.Combine(env.WebRootPath, @"Resources\Resources-fr.xml");
             Resources.Myi18nResources.InitResources(new string[] { pathToResourcesEn, pathToResourcesFr });
 
+            // If you wanted to force a culture that isn't the culture of the machine, you could use:
+            //Resources.Myi18nResources.SetCustomResourcesCulture("fr-FR");
+
             var localesAvailable = Resources.Myi18nResources.GetAllResourceCultures();
 
             if (env.IsDevelopment())
